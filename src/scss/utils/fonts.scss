@@ -1,0 +1,40 @@
+@font-face {
+	font-family: 'Geologica';
+	src: local('Geologica Regular'), local('Geologica-Regular'),
+		url('../fonts/Geologica/Geologica-Regular.woff2') format('woff2'),
+		url('../fonts/Geologica/Geologica-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geologica';
+	src: local('Geologica_Cursive Regular'), local('Geologica_Cursive-Regular'),
+		url('../fonts/Geologica/Geologica_Cursive-Regular.woff2') format('woff2'),
+		url('../fonts/Geologica/Geologica_Cursive-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geologica';
+	src: local('Geologica Bold'), local('Geologica-Bold'),
+		url('../fonts/Geologica/Geologica-Bold.woff2') format('woff2'),
+		url('../fonts/Geologica/Geologica-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geologica';
+	src: local('Geologica_Cursive Bold'), local('Geologica_Cursive-Bold'),
+		url('../fonts/Geologica/Geologica_Cursive-Bold.woff2') format('woff2'),
+		url('../fonts/Geologica/Geologica_Cursive-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+

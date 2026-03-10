@@ -1,0 +1,29 @@
+header.header
+	.st-width
+		.header__content
+			.header__logo
+				img(src="/upload/logo.svg", alt="")
+
+			.header__main
+				.header__logo-name
+					img(src="/upload/logo-name.svg", alt="")
+
+				.header-contacts
+					.header-contacts__item
+						.header-contacts__icon
+							+svg('ic-tg','ic-tg', '14', '12')
+
+						.header-contacts__val
+							a(href="tg://resolve?phone=79110868797") +7 911 086 8797
+
+					.header-contacts__item
+						.header-contacts__icon
+							+svg('ic-call','ic-call', '13', '13')
+
+						.header-contacts__val
+							a(href="tel:+78122444944") +7 812 244 4944
+
+				form.search-form
+					input(type="text", placeholder="Поиск")
+					button(type="submit")
+						+svg('ic-search','ic-search', '14', '14')
