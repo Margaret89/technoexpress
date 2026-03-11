@@ -1,10 +1,11 @@
 extends tmpl/_layout
 
 block vars
-	- var pageId = 'main'
+	- var pageId = 'content'
 
 block body
-	section Список всех страниц
+	section.st-width
+		p Список всех страниц
 		if pages
 			ul
 				each page in pages

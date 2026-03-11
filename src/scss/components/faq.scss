@@ -1,0 +1,13 @@
+/*-------------- faq -----------------*/
+.faq-wrap{
+	h2, .h2{margin-bottom: 5rem;}
+}
+
+.faq{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px 65px;
+	margin: 0 165px;
+
+	.unwrap-block{width: calc(50% - 32.5px);}
+}

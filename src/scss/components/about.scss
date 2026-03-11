@@ -1,0 +1,25 @@
+/*-------------- about -----------------*/
+.about{
+	&__main{
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
+		margin-top: 38px;
+		margin-bottom: 38px;
+	}
+	
+	&__title{
+		text-transform: uppercase;
+		padding-left: 50px;
+
+		h1,.h1{margin-bottom: 0;}
+	}
+
+	&__desc{
+		flex-shrink: 0;
+		width: 487px;
+		letter-spacing: -0.2px;
+	}
+
+	.info-block{margin-top: 35px;}
+}

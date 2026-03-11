@@ -1,0 +1,35 @@
+/*-------------- unwrap-block -----------------*/
+.unwrap-block{
+	&__head{
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		font-size: 1.8rem;
+		color: #2B2D29;
+		padding: 10px 0;
+		position: relative;
+		cursor: pointer;
+		border-bottom: 1px solid #E2E2E2;
+	}
+
+	&__arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		margin-left: auto;
+		transition: all 0.3s ease;
+
+		.icon{color: var(--color-primary);}
+	}
+
+	&__content{
+		max-height: 0;
+		overflow: hidden;
+		transition: all 0.5s;
+	}
+
+	&__info{padding-top: 20px;}
+
+	&.opened &__arr{transform: rotate(180deg);}
+}

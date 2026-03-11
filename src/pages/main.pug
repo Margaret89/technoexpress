@@ -1,0 +1,394 @@
+extends tmpl/_layout
+
+block vars
+	- var pageId = 'main'
+
+block body
+	section.top-menu-wrap
+		.st-width
+			ul.top-menu
+				-
+					var list=[
+						{
+							text:'Каталог',
+							link:'/catalog/',
+							sub:[
+								{text:'Аккумуляторы', link:'/catalog/akkumulyatory-18650/'},
+								{text:'Солнечные панели', link:'/catalog/solnechnye-paneli/'},
+								{text:'Автономное резервное питание', link:'/catalog/avtonomnoe-rezervnoe-pitanie/'},
+								{text:'Инверторы', link:'/catalog/invertory/'},
+							]
+						},
+						{
+							text:'Резервное питание',
+							link:'/catalog/avtonomnoe-rezervnoe-pitanie/',
+							sub:[
+								{text:'Для дома и дачи ', link:'/catalog/avtonomnoe-rezervnoe-pitanie/dlya-doma-i-dachi/'},
+								{text:'Для предприятий и бизнеса', link:'/catalog/avtonomnoe-rezervnoe-pitanie/avtonomnoe-pitanie-dlya-predpriyatij-i-biznesa/'},
+							]
+						},
+						{
+							text:'Публикации',
+							link:'#',
+						},
+						{
+							text:'О компании',
+							link:'/about-us/',
+						},
+						//- {
+						//- 	text:'Контакты',
+						//- 	link:'/contacts/',
+						//- },
+					]
+				each item in list
+					li.top-menu__item
+						a(href="https://technoexpress.ru"+item.link).top-menu__link= item.text
+
+						if(item.sub)
+							ul.top-menu__sub
+								each sub in item.sub
+									li.top-menu__sub-item
+										a(href="https://technoexpress.ru"+sub.link).top-menu__sub-link= sub.text
+
+	section.about
+		.st-width
+			.about__main
+				.about__title
+					h1 Солнечные электростанции
+						br
+						b и системы резервного питания
+
+				.about__desc Солнечная электростанция позволяет полностью перекрыть потребности в электроэнергии вашего предприятия. Электросеть будет использоваться только при невозможности солнечной генерации, и полном разряде аккумуляторов.
+
+		.st-width-thin
+			.advatages
+				-
+					var list=[
+						{num:'3', text:'окупаемость оборудования'},
+						{num:'15', text:'стандартный срок службы аккумуляторов'},
+						{num:'25', text:'стандартный срок службы солнечных панелей'},
+					]
+				each item,index in list
+					.advatages__item
+						.advatages__label от
+
+						.advatages__val
+							span.advatages__num= item.num
+							| 
+							| лет
+
+						.advatages__text
+							if(index == 0)
+								|окупаемость
+								br
+								|оборудования
+							else
+								= item.text
+		
+		.st-width
+			.info-block
+				.info-block__text
+					b Переходи на 
+					|Нулевое потребление 
+					b от сети
+
+				a(href="#").btn Узнать подробности
+
+	section.results-wrap.m-indent
+		.st-width-thin
+			h2 Что вы получаете ?
+
+			.results
+				-
+					var list=[
+						{img:'solar-battery.jpg', title:'Возврат инвестиций', text:'Электростанция на солнечных панелях позволяет гарантированно вернуть инвестиции от 3 лет.'},
+						{img:'Increased-profitability.jpg', title:'Увеличение прибыльности', text:'За счет снижения расходов на электроэнергию вы сразу начинаете экономить и затем получаете чистую прибыль, в том числе за счет подключения к зеленому тарифу.'},
+						{img:'min-price.jpg', title:'Минимизировать повышение цен', text:'Уменьшение влияния ежегодного роста тарифов на электроэнергию.'},
+					]
+				each item, index in list
+					.result
+						.result__icon
+							img(src="/upload/"+item.img, alt="")
+
+						.result__title
+							if(index == 0)
+								|Возврат 
+								br
+								|инвестиций
+							else
+								= item.title
+						.result__text= item.text
+
+	section.offers-wrap.m-indent
+		.st-width
+			h2 Мы предлагаем:
+
+			.offers
+				-
+					var list=[
+						{icon:'ic-search-text', icon_width:'23', icon_height:'19', title:'Готовые решения'},
+						{icon:'ic-headphones', icon_width:'24', icon_height:'25', title:'Оперативная поддержка'},
+						{icon:'ic-setting', icon_width:'22', icon_height:'22', title:'Индивидуальные проекты'},
+						{icon:'ic-garantee', icon_width:'22', icon_height:'24', title:'Гарантийное и постгарантийное обслуживание'},
+						{icon:'ic-tools', icon_width:'26', icon_height:'26', title:'Монтаж на объекте заказчика'},
+						{icon:'ic-check-design', icon_width:'22', icon_height:'22', title:'Оборудование от лучших брендов'},
+						
+					]
+				each item in list
+					.offer-item
+						.offer-item__icon
+							+svg(item.icon, item.icon, item.icon_width, item.icon_height)
+
+						.offer-item__title= item.title
+
+	section.works-wrap.m-indent
+		.st-width
+			.works
+				.works__item
+					.works__content
+						.works__img
+							h2 Как это работает днём
+
+							img(src="/upload/project-day.png", alt="")
+
+						.works__info
+							ul.design-list
+								li Солнечные панели вырабатывают электроэнергию.
+								li Идет зарядка аккумуляторов от энергии солнца, для использования накопленной энергии в вечернее и утреннее время.
+								li Электроэнергия сети питания используется только для кратковременных перегрузок.
+			
+				.works__item.works__item_dark
+					.works__content
+						.works__img
+							h2 и ночью
+
+							img(src="/upload/project-night.png", alt="")
+
+						.works__info
+							ul.design-list
+								li Используется электроэнергия от аккумуляторов.
+								li Есть возможность зарядки аккумуляторов по дешёвому ночному тарифу.
+								li Есть возможность зарядки аккумуляторов по дешёвому ночному тарифу, для питания потребителей днём при недостатке солнечной генерации или отключении от электросети.
+
+	section.products-wrap.m-indent
+		.st-width-thin
+			h2 Солнечные электростанции
+
+			.products
+				.products__sect
+					.products__title Комплект солнечных панелей
+
+					.products__content
+						.products__img
+							img(src="/upload/product1.png", alt="")
+
+						.products__list
+							-
+								var list=[
+									{name:'от 1 до 9 кВт генерации', price:'от 23 500 руб. / за 1 кВт'},
+									{name:'от 10 до 49 кВт генерации', price:'от 21 500 руб. / за 1 кВт'},
+									{name:'от 50 до 99 кВт генерации', price:'от 20 500 руб. / за 1 кВт'},
+									{name:'от 100 кВт генерации', price:'от 18 000 руб. / за 1 кВт'},
+								]
+							each item in list
+								.products__item
+									.products__name= item.name
+									.products__price= item.price
+
+				.products__sect
+					.products__title Инверторы.
+					.products__subtitle Гибридные, оффлайн, сетевые (онлайн)
+
+					.products__content
+						.products__img
+							img(src="/upload/product2.png", alt="")
+
+						.products__list
+							-
+								var list=[
+									{name:'Трехфазный инвертор 12 кВт, 380 В, 50 Гц', price:'от 000 000 руб.'},
+									{name:'Трехфазный инвертор 15 кВт, 380 В, 50 Гц', price:'от 000 000 руб.'},
+									{name:'Трехфазный инвертор 30 кВт, 380 В, 50 Гц', price:'от 000 000 руб.'},
+									{name:'Трехфазный инвертор 50 кВт, 380 В, 50 Гц', price:'от 000 000 руб.'},
+									{name:'Трехфазный инвертор 100 кВт, 380 В, 50 Гц', price:'от 000 000 руб.'},
+									{name:'Трехфазный инвертор 120 кВт, 380 В, 50 Гц', price:'от 000 000 руб.'},
+								]
+							each item in list
+								.products__item
+									.products__name= item.name
+									.products__price= item.price
+
+					.products__content
+						.products__img
+							img(src="/upload/product3.png", alt="")
+
+						.products__list
+							-
+								var list=[
+									{name:'Аккумулятор напольный 48 В, 5 кВт·ч', price:'от 000 000 руб.'},
+									{name:'Аккумулятор напольный 48 В, 10 кВт·ч', price:'от 000 000 руб.'},
+									{name:'Аккумулятор напольный 48 В, 15 кВт·ч', price:'от 000 000 руб.'},
+									{name:'Аккумулятор напольный 48 В, 20 кВт·ч', price:'от 000 000 руб.'},
+									{name:'Аккумулятор  160-800 В, 60 кВт·ч до 5 кВт·ч', price:'от 000 000 руб.'},
+								]
+							each item in list
+								.products__item
+									.products__name= item.name
+									.products__price= item.price
+				
+				.products__sect
+					.products__title ИБП
+					.products__subtitle ИБП для центров обработки данных, медицинского оборудования и других критически важных систем резервного электропитания.
+
+					.products__content
+						.products__img
+							img(src="/upload/product4.png", alt="")
+
+						.products__list
+							-
+								var list=[
+									{name:'Источник бесперебойного питания 40 кВА / 40 кВт, 380В со встроенными или внешними аккумуляторами', price:'от 410 000 руб.'},
+								]
+							each item in list
+								.products__item
+									.products__name= item.name
+									.products__price= item.price
+
+					.products__content
+						.products__img
+							img(src="/upload/product5.png", alt="")
+
+						.products__list
+							-
+								var list=[
+									{name:'Источник бесперебойного питания 120 кВА / 120 кВт, 380В с внешними модульными аккумуляторами', price:'от 1 000 000 руб.'},
+									{name:'Источник бесперебойного питания 250 кВА / 250 кВт, 380В с внешними модульными аккумуляторами', price:'от 3 000 000 руб.'},
+								]
+							each item in list
+								.products__item
+									.products__name= item.name
+									.products__price= item.price
+				
+				.products__sect
+					.products__title Батарейные модули.
+					.products__subtitle Батарейные модули для источников бесперебойного питания
+
+					.products__content
+						.products__img
+							img(src="/upload/product6.png", alt="")
+
+						.products__list
+							-
+								var list=[
+									{name:'Литиевая батарея 5 кВт·ч (100 А·ч) для монтажа в стойку (базовый элемент)', price:'от 60 000 руб.'},
+									{name:'Литиевая батарея 10 кВт·ч (200 А·ч) для монтажа в стойку (базовый элемент)', price:'от 120 000 руб.'},
+									{name:'Литиевая батарея 15 кВт·ч (300 А·ч) для монтажа в стойку (базовый элемент)', price:'от 220 000 руб.'},
+
+								]
+							each item in list
+								.products__item
+									.products__name= item.name
+									.products__price= item.price
+
+			.products-wrap__btn
+				a(href="#").btn Расчитать стоимость
+				a(href="#").btn.btn_border Узнать больше
+
+	section.design-block-wrap.m-indent
+		.st-width
+			.design-block
+				.design-block__text
+					span
+						b Мониторинг электростанции
+						| у вас в кармане
+
+				.design-block__img
+					img(src="/upload/phone.png", alt="")
+
+			.design-block-wrap__text
+				p Построение графика выработки / потребления электроэнергии и контроль состояния оборудования
+				p Срабатывание реле для запуска вспомогательного оборудования, например, топливного генератора при отказе сети питания невозможности солнечной генерации и разряде аккумуляторов ниже заданного уровня.
+	
+	section.map-wrap.m-indent
+		.st-width
+			h2 Карта инсоляции России
+
+			.map
+				img(src="/upload/map.svg", alt="")
+
+	section.consult-wrap.m-indent
+		.st-width
+			form.form-site(action="#")
+				.form-site__title Закажите бесплатную консультацию
+
+				.form-site__content
+					.form-site__item.js-form-site-item
+						.form-site__label Имя*
+
+						.form-site__field
+							input(name="name", type="text", required="required")
+
+					.form-site__item.js-form-site-item
+						.form-site__label Телефон*
+
+						.form-site__field
+							input(name="phone", type="text", required="required", class="js-phone")
+
+					.form-site__item.js-form-site-item
+						.form-site__label почта ( e-mail )
+
+						.form-site__field
+							input(name="name", type="email")
+
+					
+				.form-site__note Оставьте заявку и получите индивидуальный расчет стоимости и экономии для вашего объекта
+			
+				.form-site__btn
+					input(type="submit", value="Получить консультацию").btn.js-btn-submit
+
+				.form-site__polit Нажимая кнопку, вы соглашаетесь с политикой конфеденциальности
+
+	section.faq-wrap.m-indent
+		.st-width
+			h2 Ответы на вопросы
+			
+			.faq
+				-
+					var list=[
+						{title:'Как это работает', text:'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.'},
+						{title:'Из чего состоит солнечная станция', text:'Текст'},
+						{title:'Как убедиться в эффективности технологии', text:'Текст'},
+						{title:'Какой мощности мне нужна станция ?', text:'Текст'},
+						{title:'Из чего состоит солнечная станция', text:'Солнечные модули изготавливаются для применения во всех климатических поясах - от пустынь до крайнего севера. Модули проходят испытания на градостойкость. Защиту обеспечивает стекло, толщиной 3,2 мм, рассчитанное на жесткие условия эксплуатаwии.'},
+					]
+				each item in list
+					.unwrap-block.js-unwrap-block
+						.unwrap-block__head.js-unwrap-head
+							= item.title
+							.unwrap-block__arr
+								+svg('ic-arrow-down','ic-arrow-down', '20', '11')
+
+						.unwrap-block__content.js-unwrap-content
+							.unwrap-block__info.js-unwrap-info= item.text
+
+	section.gallery-wrap.mt-indent
+		.st-width
+			h2 Фотогалерея
+
+			.gallery-wrap__text Солнечные станции востребованы на различных видах производств и предприятий. От офисных зданий, складов, торговых павильонов, до сельского хозяйства, гостиниц и баз отдыха.
+			
+			.gallery
+				-
+					var list=[
+						{img:'gallery1.jpg'},
+						{img:'gallery2.jpg'},
+						{img:'gallery3.jpg'},
+						{img:'gallery4.jpg'},
+						{img:'gallery5.jpg'},
+						{img:'gallery6.jpg'},
+					]
+				each item in list
+					.gallery__item
+						a(href="/upload/"+item.img, data-fancybox='images').gallery__img-wrap
+							.gallery__img
+								img(src="/upload/"+item.img, alt="")

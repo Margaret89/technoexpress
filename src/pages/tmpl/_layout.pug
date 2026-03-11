@@ -9,7 +9,7 @@ html(lang="ru")
 		if pages && pageId && pages[pageId] && pages[pageId].title
 			title #{pages[pageId].title}
 		else
-			title ALMA
+			title Content
 	body
 		.wrapper
 			include ./_header
@@ -23,5 +23,5 @@ html(lang="ru")
 				if pages && pageId && pages[pageId] && pages[pageId].h1
 					h1  #{pages[pageId].h1}
 				block body
-			include ./_footer
+			//- include ./_footer
 		script(src="/main.js" type="module")

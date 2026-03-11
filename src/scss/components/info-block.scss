@@ -1,0 +1,38 @@
+/*-------------- info-block -----------------*/
+.info-block{
+	background: url(../img/bg-panels.jpg) no-repeat center;
+	background-size: cover;
+	border-radius: 20px;
+	padding: 58px 100px 70px;
+	color: #fff;
+	text-align: center;
+	position: relative;
+
+	&::before,
+	&::after{
+		content: '';
+		display: block;
+		width: 16px;
+		height: 152px;
+		background: url(../img/tech.svg) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&::before{left: 20px;}
+	&::after{right: 20px;}
+
+	&__text{
+		max-width: 520px;
+		font-size: 4.2rem;
+		line-height: 1.1;
+		text-transform: uppercase;
+		margin: 0 auto;
+
+		b{font-weight: 600;}
+	}
+
+	.btn{margin-top: 32px;}
+}

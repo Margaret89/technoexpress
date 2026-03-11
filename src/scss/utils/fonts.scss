@@ -20,6 +20,26 @@
 
 @font-face {
 	font-family: 'Geologica';
+	src: local('Geologica Light'), local('Geologica-Light'),
+		url('../fonts/Geologica/Geologica-Light.woff2') format('woff2'),
+		url('../fonts/Geologica/Geologica-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geologica';
+	src: local('Geologica_Cursive Light'), local('Geologica_Cursive-Light'),
+		url('../fonts/Geologica/Geologica_Cursive-Light.woff2') format('woff2'),
+		url('../fonts/Geologica/Geologica_Cursive-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geologica';
 	src: local('Geologica Bold'), local('Geologica-Bold'),
 		url('../fonts/Geologica/Geologica-Bold.woff2') format('woff2'),
 		url('../fonts/Geologica/Geologica-Bold.woff') format('woff');
@@ -34,6 +54,46 @@
 		url('../fonts/Geologica/Geologica_Cursive-Bold.woff2') format('woff2'),
 		url('../fonts/Geologica/Geologica_Cursive-Bold.woff') format('woff');
 	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geologica';
+	src: local('Geologica Medium'), local('Geologica-Medium'),
+		url('../fonts/Geologica/Geologica-Medium.woff2') format('woff2'),
+		url('../fonts/Geologica/Geologica-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geologica';
+	src: local('Geologica_Cursive Medium'), local('Geologica_Cursive-Medium'),
+		url('../fonts/Geologica/Geologica_Cursive-Medium.woff2') format('woff2'),
+		url('../fonts/Geologica/Geologica_Cursive-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geologica';
+	src: local('Geologica SemiBold'), local('Geologica-SemiBold'),
+		url('../fonts/Geologica/Geologica-SemiBold.woff2') format('woff2'),
+		url('../fonts/Geologica/Geologica-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geologica';
+	src: local('Geologica_Cursive SemiBold'), local('Geologica_Cursive-SemiBold'),
+		url('../fonts/Geologica/Geologica_Cursive-SemiBold.woff2') format('woff2'),
+		url('../fonts/Geologica/Geologica_Cursive-SemiBold.woff') format('woff');
+	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
 }

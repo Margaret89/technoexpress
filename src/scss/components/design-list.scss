@@ -1,0 +1,31 @@
+/*-------------- design-list -----------------*/
+.design-list{
+	&,
+	li{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	li{
+		padding-left: 45px;
+		position: relative;
+
+		&::before{
+			content: '';
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 22px;
+			height: 16px;
+			background: url(../img/check.svg) no-repeat center;
+			background-size: contain;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+
+		&:not(:last-child){margin-bottom: 50px;}
+	}
+}

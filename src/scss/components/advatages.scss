@@ -1,0 +1,31 @@
+/*-------------- advatages -----------------*/
+.advatages{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+
+	&__item{width: calc(33.33% - 20px);}
+
+	&__label{
+		font-size: 1.8rem;
+		line-height: 1.2;
+		color: #606060;
+		margin-bottom: 2px;
+	}
+
+	&__val{
+		font-size: 4.1rem;
+		line-height: 1;
+		color: var(--color-primary);
+	}
+
+	&__text{
+		font-size: 1.8rem;
+		color: #606060;
+	}
+
+	&__num{
+		font-size: 3.6rem;
+		font-weight: 600;
+	}
+}
