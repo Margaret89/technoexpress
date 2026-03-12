@@ -160,3 +160,20 @@ document.querySelectorAll('.js-unwrap-block').forEach((accSection) => {
 		});
 	});
 });
+
+
+//Открыть мобильное меню
+if(document.querySelector('.js-btn-menu')){
+	document.querySelector('.js-btn-menu').addEventListener('click', function(){
+		document.querySelector('.js-top-menu-wrap').classList.add('open');
+		document.querySelector('.js-body').classList.add('no-scroll');
+	})
+}
+
+//Закрыть мобильное меню
+if(document.querySelector('.js-btn-menu-close')){
+	document.querySelector('.js-btn-menu-close').addEventListener('click', function(){
+		document.querySelector('.js-top-menu-wrap').classList.remove('open');
+		document.querySelector('.js-body').classList.remove('no-scroll');
+	})
+}

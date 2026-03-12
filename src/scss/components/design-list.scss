@@ -29,3 +29,16 @@
 		&:not(:last-child){margin-bottom: 50px;}
 	}
 }
+
+@media (max-width: 767px) {
+	.design-list{
+		li{
+			background: #F2F2F2;
+			padding: 17px 55px 23px 72px;
+			border-radius: 10px;
+
+			&::before{left: 25px;}
+			&:not(:last-child){margin-bottom: 10px;}
+		}
+	}
+}

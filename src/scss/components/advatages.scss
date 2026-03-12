@@ -29,3 +29,47 @@
 		font-weight: 600;
 	}
 }
+
+@media (max-width: 991px) {
+	.advatages{
+		&__text{font-size: 1.6rem;}
+	}
+}
+
+@media (max-width: 767px) {
+	.advatages-wrap{
+		order: 3;
+		margin-top: 15px;
+		position: relative;
+	}
+
+	.advatages{
+		gap: 15px;
+
+		&__item:first-child{
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+		}
+
+		&__item:last-child{
+			border-top-right-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+
+		&__item{
+			width: calc(33.33% - 10px);
+			background: #fff;
+			padding: 6px 13px;
+			border-radius: 10px;
+		}
+
+		&__label{font-size: 1.4rem;}
+		&__num{font-size: 2.8rem;}
+		&__val{font-size: 2.6rem;}
+
+		&__text{
+			font-size: 1.4rem;
+			line-height: 1.1;
+		}
+	}
+}

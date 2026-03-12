@@ -39,3 +39,19 @@
 
 	&:hover{box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.1);}
 }
+
+@media (max-width: 991px) {
+	.offer-item{width: calc(33.33% - 6.66px);}
+}
+
+@media (max-width: 767px) {
+	.offers-wrap{margin-bottom: 0;}
+	
+	.offer-item{
+		width: calc(50% - 5px);
+		min-height: 152px;
+		padding: 22px;
+
+		&__title{font-size: 1.7rem;}
+	}
+}

@@ -36,3 +36,26 @@
 
 	.btn{margin-top: 32px;}
 }
+
+@media (max-width: 991px) {
+	.info-block{
+		&__text{
+			max-width: 445px;
+			font-size: 3.6rem;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.info-block{
+		padding: 35px 65px;
+
+		&::before,
+		&::after{
+			display: none;
+		}
+
+		&__text{font-size: 3.2rem;}
+		.btn{margin-top: 15px;}
+	}
+}

@@ -83,3 +83,35 @@
 		}
 	}
 }
+
+@media (max-width: 991px) {
+	.header{
+		.search-form{display: none;}
+	}
+
+	.header-contacts{
+		&__item:not(:first-child){display: none;}
+	}
+}
+
+@media (max-width: 767px) {
+	.header{
+		padding: 30px 0;
+		
+		&__logo{
+			width: 50px;
+			margin-left: 26px;
+			img{max-height: 35px;}
+		}
+
+		&__logo-name{
+			img{max-width: 100px;}
+		}
+
+		&__content{gap: 0;}
+	}
+
+	.header-contacts{
+		&__item{gap: 5px;}
+	}
+}

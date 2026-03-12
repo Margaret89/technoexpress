@@ -4,8 +4,16 @@ block vars
 	- var pageId = 'main'
 
 block body
-	section.top-menu-wrap
+	section.top-menu-wrap.js-top-menu-wrap
 		.st-width
+			.ic-hamburger.active.js-btn-menu-close
+				span
+
+			form.search-form
+					input(type="text", placeholder="Поиск")
+					button(type="submit")
+						+svg('ic-search','ic-search', '14', '14')
+
 			ul.top-menu
 				-
 					var list=[
@@ -58,9 +66,12 @@ block body
 						br
 						b и системы резервного питания
 
+					.ic-hamburger.js-btn-menu
+						span
+
 				.about__desc Солнечная электростанция позволяет полностью перекрыть потребности в электроэнергии вашего предприятия. Электросеть будет использоваться только при невозможности солнечной генерации, и полном разряде аккумуляторов.
 
-		.st-width-thin
+		.st-width-thin.advatages-wrap
 			.advatages
 				-
 					var list=[
@@ -101,14 +112,14 @@ block body
 			.results
 				-
 					var list=[
-						{img:'solar-battery.jpg', title:'Возврат инвестиций', text:'Электростанция на солнечных панелях позволяет гарантированно вернуть инвестиции от 3 лет.'},
-						{img:'Increased-profitability.jpg', title:'Увеличение прибыльности', text:'За счет снижения расходов на электроэнергию вы сразу начинаете экономить и затем получаете чистую прибыль, в том числе за счет подключения к зеленому тарифу.'},
-						{img:'min-price.jpg', title:'Минимизировать повышение цен', text:'Уменьшение влияния ежегодного роста тарифов на электроэнергию.'},
+						{icon:'ic-solar-battery', icon_width:'53', icon_height:'42', title:'Возврат инвестиций', text:'Электростанция на солнечных панелях позволяет гарантированно вернуть инвестиции от 3 лет.'},
+						{icon:'ic-increased-profitabilit', icon_width:'57', icon_height:'41', title:'Увеличение прибыльности', text:'За счет снижения расходов на электроэнергию вы сразу начинаете экономить и затем получаете чистую прибыль, в том числе за счет подключения к зеленому тарифу.'},
+						{icon:'ic-min-price', icon_width:'53', icon_height:'42', title:'Минимизировать повышение цен', text:'Уменьшение влияния ежегодного роста тарифов на электроэнергию.'},
 					]
 				each item, index in list
 					.result
 						.result__icon
-							img(src="/upload/"+item.img, alt="")
+							+svg(item.icon, item.icon, item.icon_width, item.icon_height)
 
 						.result__title
 							if(index == 0)
@@ -176,7 +187,11 @@ block body
 
 			.products
 				.products__sect
-					.products__title Комплект солнечных панелей
+					.products__title-wrap
+						.products__title Комплект солнечных панелей
+
+					.products__img.products__img_mobile
+						img(src="/upload/product1.png", alt="")
 
 					.products__content
 						.products__img
@@ -196,8 +211,12 @@ block body
 									.products__price= item.price
 
 				.products__sect
-					.products__title Инверторы.
-					.products__subtitle Гибридные, оффлайн, сетевые (онлайн)
+					.products__title-wrap
+						.products__title Инверторы.
+						.products__subtitle Гибридные, оффлайн, сетевые (онлайн)
+
+					.products__img.products__img_mobile
+						img(src="/upload/product2.png", alt="")
 
 					.products__content
 						.products__img
@@ -218,6 +237,13 @@ block body
 									.products__name= item.name
 									.products__price= item.price
 
+					.products__title-wrap.products__title-wrap_mobile
+						.products__title Инверторы.
+						.products__subtitle Гибридные, оффлайн, сетевые (онлайн)
+
+					.products__img.products__img_mobile
+						img(src="/upload/product3.png", alt="")
+
 					.products__content
 						.products__img
 							img(src="/upload/product3.png", alt="")
@@ -237,8 +263,12 @@ block body
 									.products__price= item.price
 				
 				.products__sect
-					.products__title ИБП
-					.products__subtitle ИБП для центров обработки данных, медицинского оборудования и других критически важных систем резервного электропитания.
+					.products__title-wrap
+						.products__title ИБП
+						.products__subtitle ИБП для центров обработки данных, медицинского оборудования и других критически важных систем резервного электропитания.
+
+					.products__img.products__img_mobile
+						img(src="/upload/product4.png", alt="")
 
 					.products__content
 						.products__img
@@ -253,6 +283,13 @@ block body
 								.products__item
 									.products__name= item.name
 									.products__price= item.price
+
+					.products__title-wrap.products__title-wrap_mobile
+						.products__title ИБП
+						.products__subtitle ИБП для центров обработки данных, медицинского оборудования и других критически важных систем резервного электропитания.
+
+					.products__img.products__img_mobile
+						img(src="/upload/product5.png", alt="")
 
 					.products__content
 						.products__img
@@ -270,8 +307,12 @@ block body
 									.products__price= item.price
 				
 				.products__sect
-					.products__title Батарейные модули.
-					.products__subtitle Батарейные модули для источников бесперебойного питания
+					.products__title-wrap
+						.products__title Батарейные модули.
+						.products__subtitle Батарейные модули для источников бесперебойного питания
+
+					.products__img.products__img_mobile
+						img(src="/upload/product6.png", alt="")
 
 					.products__content
 						.products__img
@@ -301,6 +342,8 @@ block body
 					span
 						b Мониторинг электростанции
 						| у вас в кармане
+
+					p Построение графика выработки / потребления электроэнергии и контроль состояния оборудования
 
 				.design-block__img
 					img(src="/upload/phone.png", alt="")
